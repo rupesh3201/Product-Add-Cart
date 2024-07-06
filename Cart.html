@@ -187,10 +187,11 @@
             cursor: pointer;
             margin-top:190px ;
         }
+        
 
     </style>
 </head>
-<body class="body">
+<body class="body" id="Body">
    <h1 class="heading">Your heading is here</h1>
     <div class="Text_Container">
         
@@ -201,18 +202,18 @@
         <h1 class="Prodct_details">Nike Impact 4 Basketball Shoes</h1>
         <br>
         <h4 class="Prodct_details_s">Size: 8/Malachite <br>
-        <h4 class="Prodct_details_price"> <del>₹5,695</del> &nbsp; <span class="Price">₹3,588</span> &nbsp;  &nbsp; <span class="offfer">36% Off 2 offers applied
+        <h4 class="Prodct_details_price"> <del>₹5,695</del> &nbsp; <span class="Price" id="Price">₹3,588</span> &nbsp;  &nbsp; <span class="offfer">36% Off 2 offers applied
         </span></h4>
         <br>
         <div class="Action_btn_container">
-        <img src="./add.png" class="Action_btn" onclick="Increase()">
-        <button class="num_of_pro" id="num_of_pro">
-            1
+        <img src="./minus.png"  class="Action_btn" onclick="Quantitychange('Increase()')">
+        <button class="num_of_pro" id="num_of_pro" >
+           1
         </button>
-        <img src="./minus.png"  class="Action_btn">
+        <img src="./add.png" class="Action_btn" onclick="Quantitychange('Decrease()')">
         </div>
         <div>
-            <h4 class="remove" id="remove">
+            <h4 class="remove" id="remove" onclick="reomove()">
                 SAVE FOR LATER  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;REMOVE
             </h4>
         </div>
@@ -221,11 +222,13 @@
         <button class="place_order_btn">PLACE ORDER</button>
     </div>
     <script>
-        function Increase()
+        function Quantitychange(action)
         {
-            
+            const QuanityElement = document.getElementById("num_of_pro")
+            let Quantity = parseInt(QuanityElement.innerText)
+            QuanityElement.innerText = action ==Increase? ++Quantity : --Quantity
         }
-
+       
     </script>
    
     
