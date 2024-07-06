@@ -57,7 +57,7 @@
             display: flex;
             border: 1px black;
             background-color:whitesmoke;
-            height: 300px;
+            height: 230px;
             width: 850px;
             display: flex;
             position: relative;
@@ -155,9 +155,37 @@
             background-color: rgba(249, 108, 57, 0.925);
 
         }
-        .Action_btn
+        .Action_btn_container
         {
-            
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            margin-left:-480px ;
+            cursor: pointer;
+            margin-top:165px ;
+        }
+        .Action_btn
+        { height: 25px;
+
+        }
+        .num_of_pro
+        {
+            height: 30px;
+            width: 65px;
+            border: 2px bold black;
+
+        }
+        .remove
+        {
+            font-size: 15px;
+            font-weight: 100;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            position: absolute;
+            margin-left: 30px;
+            cursor: pointer;
+            margin-top:190px ;
         }
 
     </style>
@@ -175,15 +203,22 @@
         <h4 class="Prodct_details_s">Size: 8/Malachite <br>
         <h4 class="Prodct_details_price"> <del>₹5,695</del> &nbsp; <span class="Price">₹3,588</span> &nbsp;  &nbsp; <span class="offfer">36% Off 2 offers applied
         </span></h4>
-        <div>
-        <img src="./add.png" class="Action_btn">
+        <br>
+        <div class="Action_btn_container">
+        <img src="./add.png" class="Action_btn" onclick="Increase()">
+        <button class="num_of_pro" id="num_of_pro">
+            1
+        </button>
         <img src="./minus.png"  class="Action_btn">
+        </div>
+        <div>
+            <h4 class="remove" id="remove">
+                SAVE FOR LATER  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;REMOVE
+            </h4>
         </div>
     </div >
     <div class="palce_oder_Container">
         <button class="place_order_btn">PLACE ORDER</button>
-        
-
     </div>
    
     
