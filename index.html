@@ -192,7 +192,8 @@
     </style>
 </head>
 <body class="body" id="Body">
-   <h1 class="heading">Your heading is here</h1>
+    <!-- rename -->
+    <h1 class="heading">Stare & Shop</h1>
     <div class="Text_Container">
         
         <button class="text_btn">Enter Delivery Pincode</button>
@@ -202,15 +203,15 @@
         <h1 class="Prodct_details">Nike Impact 4 Basketball Shoes</h1>
         <br>
         <h4 class="Prodct_details_s">Size: 8/Malachite <br>
-        <h4 class="Prodct_details_price"> <del>₹5,695</del> &nbsp; <span class="Price" id="Price">₹3,588</span> &nbsp;  &nbsp; <span class="offfer">36% Off 2 offers applied
+        <h4 class="Prodct_details_price"> <del>₹5,695</del> &nbsp; <span class="Price" id="Price">3,588</span> &nbsp;  &nbsp; <span class="offfer">36% Off 2 offers applied
         </span></h4>
         <br>
         <div class="Action_btn_container">
-        <img src="./minus.png"  class="Action_btn" onclick="Quantitychange('Increase()')">
+        <img src="./minus.png"  class="Action_btn" onclick="Quantitychange('Decrease')">
         <button class="num_of_pro" id="num_of_pro" >
            1
         </button>
-        <img src="./add.png" class="Action_btn" onclick="Quantitychange('Decrease()')">
+        <img src="./add.png" class="Action_btn" onclick="Quantitychange('Increase')">
         </div>
         <div>
             <h4 class="remove" id="remove" onclick="reomove()">
@@ -226,7 +227,30 @@
         {
             const QuanityElement = document.getElementById("num_of_pro")
             let Quantity = parseInt(QuanityElement.innerText)
-            QuanityElement.innerText = action ==Increase? ++Quantity : --Quantity
+            if(Quantity == 1 && action=='Decrease' )
+            {
+                alert("Quantity Cannot less than one")
+
+            }
+            else if(Quantity == 5 && action=='Increase')
+            {
+                alert("Quantity Cannot More  than Five")
+            }
+            else if( Quantity==2)
+            { 
+                const PriceElement = document.getElementById("Price")
+                let Price = parseInt(PriceElement.innerText)
+                PriceElement.innerText = 2*Price
+            }
+            
+     
+                   
+                    
+            
+            QuanityElement.innerText = action =='Increase' ? ++Quantity:--Quantity
+
+            
+           
         }
        
     </script>
